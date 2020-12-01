@@ -8,7 +8,7 @@ It uses the [OverlapNet](https://github.com/PRBonn/OverlapNet) to train an obser
 Developed by [Xieyuanli Chen](http://www.ipb.uni-bonn.de/people/xieyuanli-chen/) and [Thomas Läbe](https://www.ipb.uni-bonn.de/people/thomas-laebe/).
 
 
-<img src="http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/demo.gif" width="800">
+<img src="data/demo.gif" width="800">
 
 Localization results of overlap-based Monte Carlo Localization.
 
