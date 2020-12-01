@@ -1,0 +1,53 @@
+# Configuration for preparation of training (specifying all the paths)
+# --------------------------------------------------------------------
+
+# General parameters
+# resolution of grid is 20 cm
+resolution: 0.2
+# for each frame, we generate grids inside a 1m*1m square
+offset: 1.0
+# number of frames for training, -1 uses all frames
+num_frames: 100
+# Set true if you only need the data for mcl
+mcl_only: False
+
+# Inputs
+# the folder of raw LiDAR scans
+scan_folder: '../data/07/velodyne'
+# ground truth poses file
+pose_file: '../data/07/poses.txt'
+# calibration file
+calib_file: '../data/07/calib.txt'
+
+# Outputs
+# global point cloud map file
+map_file: '../data/07/map_kitti07.pcd'
+# virtual scan folder
+virtual_scan_folder: '../data/07/map/virtual_scan'
+
+# map depth and normal folders
+map_depth_folder: '../data/07/map/depth'
+map_normal_folder: '../data/07/map/normal'
+
+# query depth and normal folders
+query_depth_folder: '../data/07/query/depth'
+query_normal_folder: '../data/07/query/normal'
+
+# training depth and normal folder
+training_depth_folder: '../data/07/training/depth'
+training_normal_folder: '../data/07/training/normal'
+
+# overlap and yaw ground truth file path
+overlap_file_path: '../data/07/ground_truth/overlap.npz' 
+ground_truth: '../data/07/ground_truth/ground_truth_overlap_yaw.npz'  # ground truth labels in OverlapNet format
+rename_lut: '../data/07/ground_truth/rename_lut.npz'      # renaming look up table used for converting data into OverlapNet format
+
+# range image parameters
+range_image:
+  height: 64
+  width: 900
+  fov_up: 3.0
+  fov_down: -25.0
+  max_range: 50.0
+  min_range: 2.0
+

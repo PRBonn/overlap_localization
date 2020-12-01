@@ -1,0 +1,9 @@
+setuptools==41.0.0
+matplotlib==3.0.3
+sklearn
+tensorflow-gpu==1.15.4
+keras==2.1.5
+scipy==1.5.1
+open3d==0.10.0.0
+tqdm==4.48.0
+h5py<3.0.0
