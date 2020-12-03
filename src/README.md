@@ -11,7 +11,7 @@ The implementation of overlap-based MCL contains three parts:
 
 #### Preparing training data
 
-To train a new observation model, one could find more information in prepare_training [README.md](src/prepare_training/README.md).
+To train a new observation model, one could find more information in prepare_training [README.md](prepare_training/README.md).
 
 #### Generating map
 
