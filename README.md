@@ -71,8 +71,8 @@ For more details about the usage and each module of this implementation, one cou
 To train a new observation model, one could find more information in prepare_training [README.md](src/prepare_training/README.md).
 
 #### Collection of preprocessed data
-- KITTI Odometry sequence 07: [download](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/kitti_07.zip).
-- Pre-trained sensor model: [download](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/model.weight).
+- KITTI Odometry Sequence 07: [download](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/kitti_07.zip).
+- Pre-trained Sensor Model: [download](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/model.weight).
 - Feature Volumes: [download](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/feature_volumes.zip).
 - Map Data: [download](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/map.zip).
 - Query Data: [download](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/query.zip).
