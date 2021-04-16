@@ -12,7 +12,7 @@ def motion_model(particles, u, real_command=False, duration=0.1):
 
   input:
      particles ... the particles as in the main script
-     u ... the command in the form [rot1 trasl rot2]'
+     u ... the command in the form [rot1 trasl rot2] or real odometry [v, w]
      noise ... the variances for producing the Gaussian noise for
      perturbating the motion,  noise = [noiseR1 noiseTrasl noiseR2]
 
@@ -25,24 +25,22 @@ def motion_model(particles, u, real_command=False, duration=0.1):
   Assume Gaussian noise in each of the three parameters of the motion model.
   These three parameters may be used as standard deviations for sampling.
   """
+  num_particles = len(particles)
   if not real_command:
     # noise in the [rot1 trasl rot2] commands when moving the particles
-    MOTION_NOISE = [0.01, 0.05, 0.01]
-    # MOTION_NOISE = [0.05, 1, 0.05]
+    MOTION_NOISE = [0.01, 0.1, 0.01]
     r1Noise = MOTION_NOISE[0]
     transNoise = MOTION_NOISE[1]
     r2Noise = MOTION_NOISE[2]
 
-    for particle in particles:
-      # use the Gaussian noise to simulate the noise in the motion model
-      rot1 = u[0] + r1Noise * np.random.randn(1)
-      tras1 = u[1] + transNoise * np.random.randn(1)
-      rot2 = u[2] + r2Noise * np.random.randn(1)
+    rot1 = u[0] + r1Noise * np.random.randn(num_particles)
+    tras1 = u[1] + transNoise * np.random.randn(num_particles)
+    rot2 = u[2] + r2Noise * np.random.randn(num_particles)
 
-      # update pose using motion model
-      particle[0] = particle[0]+tras1*np.cos(particle[2]+rot1)
-      particle[1] = particle[1]+tras1*np.sin(particle[2]+rot1)
-      particle[2] = particle[2]+rot1+rot2
+    # update pose using motion model
+    particles[:, 0] += tras1 * np.cos(particles[:, 2] + rot1)
+    particles[:, 1] += tras1 * np.sin(particles[:, 2] + rot1)
+    particles[:, 2] += rot1 + rot2
 
   else:  # use real commands with duration
     # noise in the [v, w] commands when moving the particles
@@ -50,18 +48,15 @@ def motion_model(particles, u, real_command=False, duration=0.1):
     vNoise = MOTION_NOISE[0]
     wNoise = MOTION_NOISE[1]
 
-    for particle in particles:
-      # use the Gaussian noise to simulate the noise in the motion model
-      v = u[0] + np.random.randn(0, vNoise)
-      w = u[1] + np.random.randn(0, wNoise)
-      gamma = np.random.randn(0, wNoise)
+    # use the Gaussian noise to simulate the noise in the motion model
+    v = u[0] + vNoise * np.random.randn(num_particles)
+    w = u[1] + wNoise * np.random.randn(num_particles)
+    gamma = wNoise * np.random.randn(num_particles)
 
-      # update pose using motion models
-      particle[0] = np.round(particle[0] - v/w*np.sin(particle[2])
-                                       + v/w*np.sin(particle[2]+w*duration))
-      particle[1] = np.round(particle[1] + v/w*np.cos(particle[2])
-                                       - v/w*np.cos(particle[2]+w*duration))
-      particle[2] = particle[2] + w * duration + gamma * duration
+    # update pose using motion models
+    particles[:, 0] += - v / w * np.sin(particles[:, 2]) + v / w * np.sin(particles[:, 2] + w * duration)
+    particles[:, 1] += v / w * np.cos(particles[:, 2]) - v / w * np.cos(particles[:, 2] + w * duration)
+    particles[:, 2] += w * duration + gamma * duration
 
   return particles
 
