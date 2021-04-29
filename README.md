@@ -12,6 +12,10 @@ Developed by [Xieyuanli Chen](http://www.ipb.uni-bonn.de/people/xieyuanli-chen/)
 
 Localization results of overlap-based Monte Carlo Localization.
 
+
+### Table of Contents
+0. [Publication](#Publication)
+
 ## Publication
 If you use our implementation in your academic work, please cite the corresponding [paper](http://www.ipb.uni-bonn.de/pdfs/chen2020iros.pdf):
     
