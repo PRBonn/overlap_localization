@@ -19,7 +19,7 @@ If you use our implementation in your academic work, please cite the correspondi
 	@inproceedings{chen2020iros,
 		author = {X. Chen and T. L\"abe and L. Nardi and J. Behley and C. Stachniss},
 		title = {{Learning an Overlap-based Observation Model for 3D LiDAR Localization}},
-		booktitle = iros,
+		booktitle = {Proceedings of the IEEE/RSJ Int. Conf. on Intelligent Robots and Systems (IROS)},
 		year = {2020},
 		url={http://www.ipb.uni-bonn.de/pdfs/chen2020iros.pdf},
 	}
