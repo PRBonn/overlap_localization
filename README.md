@@ -5,7 +5,7 @@ This repo contains the code for our IROS2020 paper: Learning an Overlap-based Ob
  
 It uses the [OverlapNet](https://github.com/PRBonn/OverlapNet) to train an observation model for Monte Carlo Localization and achieves global localization with 3D LiDAR scans.
 
-Developed by [Xieyuanli Chen](http://www.ipb.uni-bonn.de/people/xieyuanli-chen/) and [Thomas Läbe](https://www.ipb.uni-bonn.de/people/thomas-laebe/).
+Developed by [Xieyuanli Chen](https://www.ipb.uni-bonn.de/people/xieyuanli-chen/) and [Thomas Läbe](https://www.ipb.uni-bonn.de/people/thomas-laebe/).
 
 
 <img src="data/demo.gif" width="800">
@@ -14,14 +14,14 @@ Localization results of overlap-based Monte Carlo Localization.
 
 
 ## Publication
-If you use our implementation in your academic work, please cite the corresponding [paper](http://www.ipb.uni-bonn.de/pdfs/chen2020iros.pdf):
+If you use our implementation in your academic work, please cite the corresponding [paper](https://www.ipb.uni-bonn.de/pdfs/chen2020iros.pdf):
     
 	@inproceedings{chen2020iros,
 		author = {X. Chen and T. L\"abe and L. Nardi and J. Behley and C. Stachniss},
 		title = {{Learning an Overlap-based Observation Model for 3D LiDAR Localization}},
 		booktitle = {Proceedings of the IEEE/RSJ Int. Conf. on Intelligent Robots and Systems (IROS)},
 		year = {2020},
-		url={http://www.ipb.uni-bonn.de/pdfs/chen2020iros.pdf},
+		url={https://www.ipb.uni-bonn.de/pdfs/chen2020iros.pdf},
 	}
 
 ## Dependencies
@@ -58,7 +58,7 @@ To use a GPU, first you need to install the Nvidia driver and CUDA, so have fun!
 ## How to use
 
 #### Quick use
-For a quick demo, one could download the [feature volumes](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/feature_volumes.zip) and pre-trained sensor [model](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/model.weight), extract the feature volumes in the `/data` folder following the recommended [data structure](data/README.md), and then run:
+For a quick demo, one could download the [feature volumes](https://www.ipb.uni-bonn.de/html/projects/overlap_mcl/feature_volumes.zip) and pre-trained sensor [model](https://www.ipb.uni-bonn.de/html/projects/overlap_mcl/model.weight), extract the feature volumes in the `/data` folder following the recommended [data structure](data/README.md), and then run:
   ```bash
   cd src/
   python3 main_overlap_mcl.py
@@ -72,12 +72,12 @@ For more details about the usage and each module of this implementation, one cou
 To train a new observation model, one could find more information in prepare_training [README.md](src/prepare_training/README.md).
 
 #### Collection of preprocessed data
-- KITTI Odometry Sequence 07: [download](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/kitti_07.zip).
-- Pre-trained Sensor Model: [download](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/model.weight).
-- Feature Volumes: [download](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/feature_volumes.zip).
-- Map Data: [download](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/map.zip).
-- Query Data: [download](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/query.zip).
-- Training Data: [download](http://www.ipb.uni-bonn.de/html/projects/overlap_mcl/training.zip).
+- KITTI Odometry Sequence 07: [download](https://www.ipb.uni-bonn.de/html/projects/overlap_mcl/kitti_07.zip).
+- Pre-trained Sensor Model: [download](https://www.ipb.uni-bonn.de/html/projects/overlap_mcl/model.weight).
+- Feature Volumes: [download](https://www.ipb.uni-bonn.de/html/projects/overlap_mcl/feature_volumes.zip).
+- Map Data: [download](https://www.ipb.uni-bonn.de/html/projects/overlap_mcl/map.zip).
+- Query Data: [download](https://www.ipb.uni-bonn.de/html/projects/overlap_mcl/query.zip).
+- Training Data: [download](https://www.ipb.uni-bonn.de/html/projects/overlap_mcl/training.zip).
 
 ## License
 
